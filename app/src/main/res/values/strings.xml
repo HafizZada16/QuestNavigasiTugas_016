@@ -8,6 +8,9 @@
     <string name="developer_nim">20230140016</string>
     <string name="login_button">Masuk</string>
 
-
+    <!-- List Data Screen -->
+    <string name="participant_list_title">List Daftar Peserta</string>
+    <string name="home_button">Beranda</string>
+    <string name="form_button">Formulir</string>
 
 </resources>
