@@ -13,7 +13,6 @@ import com.example.questnavigasitugas_016.viewmodel.ParticipantViewModel
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
-    // ViewModel dibagikan di sini
     val participantViewModel: ParticipantViewModel = viewModel()
 
     NavHost(navController = navController, startDestination = "welcome") {
