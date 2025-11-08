@@ -120,6 +120,18 @@ fun FormulirScreen(navController: NavController, viewModel: ParticipantViewModel
                 selectedValue = maritalStatus,
                 onValueChange = { maritalStatus = it }
             )
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(stringResource(R.string.address_label), style = MaterialTheme.typography.labelMedium)
+            OutlinedTextField(
+                value = address,
+                onValueChange = { address = it },
+                placeholder = { Text(stringResource(id = R.string.address_placeholder)) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(100.dp),
+                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done)
+            )
         }
     }
 }
