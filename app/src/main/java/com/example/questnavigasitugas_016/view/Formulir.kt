@@ -1,12 +1,13 @@
 package com.example.questnavigasitugas_016.view
 
-import android.R
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.navigation.NavController
+import com.example.questnavigasitugas_016.data.FormData
 import com.example.questnavigasitugas_016.viewmodel.ParticipantViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -17,4 +18,21 @@ fun FormulirScreen(navController: NavController, viewModel: ParticipantViewModel
     var maritalStatus by remember { mutableStateOf("") }
     var address by remember { mutableStateOf("") }
 
+    var showValidationError by remember { mutableStateOf(false) }
+    var showSuccessDialog by remember { mutableStateOf<FormData?>(null) }
+
+    val handleSubmit = {
+        if (name.isBlank() || gender == null || maritalStatus.isBlank() || address.isBlank()) {
+            showValidationError = true
+        } else {
+            val newParticipant = FormData(
+                nama = name,
+                gender = gender!!,
+                status = maritalStatus,
+                alamat = address
+            )
+            viewModel.addParticipant(newParticipant)
+            showSuccessDialog = newParticipant
+        }
+    }
 }
