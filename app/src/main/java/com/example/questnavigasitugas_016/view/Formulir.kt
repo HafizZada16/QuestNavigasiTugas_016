@@ -1,6 +1,7 @@
 package com.example.questnavigasitugas_016.view
 
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -35,4 +36,17 @@ fun FormulirScreen(navController: NavController, viewModel: ParticipantViewModel
             showSuccessDialog = newParticipant
         }
     }
+    if (showValidationError) {
+        val participant = null
+        ValidationPopup(onDismiss = { showValidationError = false })
+    }
+    showSuccessDialog?.let { participant ->
+        SuccessPopup(participant = participant, onDismiss = {
+            showSuccessDialog = null
+            navController.popBackStack()
+        })
+    }
+
+    Scaffold {  }
 }
+
