@@ -11,8 +11,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.questnavigasitugas_016.R
 
@@ -30,5 +33,11 @@ fun WelcomeScreen(navController: NavController) {
             style = MaterialTheme.typography.headlineMedium
         )
         Spacer(modifier = Modifier.weight(1f))
+
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text("CARD-LST", fontSize = 32.sp, fontWeight = FontWeight.Bold, color = Color(0xFF8A2BE2))
+            Text("MOBILE APP", fontSize = 16.sp, color = Color.Gray)
+            Text("2025", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color(0xFF8A2BE2))
+        }
     }
 }
