@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">QuestNavigasiTugas_016</string>
+    <string name="ok_button">OK</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_title">Selamat Datang</string>
+    <string name="developer_name">Hafiz Zada Maulana</string>
+    <string name="developer_nim">20230140016</string>
+    <string name="login_button">Masuk</string>
+
+
+
 </resources>
