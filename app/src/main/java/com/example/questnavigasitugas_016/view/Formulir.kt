@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.DropdownMenu
@@ -215,5 +216,19 @@ private fun MaritalStatusDropdown(selectedValue: String, onValueChange: (String)
             }
         }
     }
+}
+
+@Composable
+private fun ValidationPopup(onDismiss: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(id = R.string.validation_error_title)) },
+        text = { Text(stringResource(id = R.string.validation_error_message)) },
+        confirmButton = {
+            Button(onClick = onDismiss) {
+                Text(stringResource(id = R.string.ok_button))
+            }
+        }
+    )
 }
 
