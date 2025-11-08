@@ -1,5 +1,6 @@
 package com.example.questnavigasitugas_016.view
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -23,6 +25,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -94,6 +97,38 @@ fun ParticipantCard(participant: FormData) {
                 Text(stringResource(R.string.address_label), style = MaterialTheme.typography.labelSmall)
                 Text(participant.alamat, style = MaterialTheme.typography.bodyLarge)
             }
+        }
+    }
+}
+
+@Composable
+fun BottomNavigationBar(navController: NavController) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.surface)
+            .padding(16.dp),
+        horizontalArrangement = Arrangement.SpaceAround,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Button(
+            onClick = {
+                if (navController.currentDestination?.route != "list_data") {
+                    navController.navigate("list_data") {
+                        popUpTo("list_data") { inclusive = true }
+                    }
+                }
+            },
+            modifier = Modifier.weight(1f)
+        ) {
+            Text(stringResource(id = R.string.home_button))
+        }
+        Spacer(modifier = Modifier.width(16.dp))
+        Button(
+            onClick = { navController.navigate("formulir") },
+            modifier = Modifier.weight(1f)
+        ) {
+            Text(stringResource(id = R.string.form_button))
         }
     }
 }
