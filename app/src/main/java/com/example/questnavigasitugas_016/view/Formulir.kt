@@ -113,6 +113,13 @@ fun FormulirScreen(navController: NavController, viewModel: ParticipantViewModel
                 )
                 Text(stringResource(id = R.string.gender_female))
             }
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(stringResource(R.string.marital_status_label), style = MaterialTheme.typography.labelMedium)
+            MaritalStatusDropdown(
+                selectedValue = maritalStatus,
+                onValueChange = { maritalStatus = it }
+            )
         }
     }
 }
