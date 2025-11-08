@@ -13,4 +13,23 @@
     <string name="home_button">Beranda</string>
     <string name="form_button">Formulir</string>
 
+    <!-- Formulir Screen -->
+    <string name="registration_form_title">Formulir Pendaftaran</string>
+    <string name="full_name_label">NAMA LENGKAP</string>
+    <string name="full_name_placeholder">Isikan nama lengkap</string>
+    <string name="gender_label">JENIS KELAMIN</string>
+    <string name="gender_male">Laki-laki</string>
+    <string name="gender_female">Perempuan</string>
+    <string name="marital_status_label">STATUS PERKAWINAN</string>
+    <string name="marital_status_placeholder">Pilih status kawin</string>
+    <string name="address_label">ALAMAT</string>
+    <string name="address_placeholder">Isikan alamat</string>
+    <string name="back_button">Kembali</string>
+    <string name="submit_button">Submit</string>
+
+    <!-- Popup Messages -->
+    <string name="validation_error_title">Validasi Gagal</string>
+    <string name="validation_error_message">Semua kolom wajib diisi. Silakan lengkapi data Anda.</string>
+    <string name="success_popup_title">Data Berhasil Disimpan</string>
+
 </resources>
