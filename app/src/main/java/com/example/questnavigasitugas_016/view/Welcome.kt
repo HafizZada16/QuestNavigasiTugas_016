@@ -32,12 +32,18 @@ fun WelcomeScreen(navController: NavController) {
             text = stringResource(R.string.welcome_title),
             style = MaterialTheme.typography.headlineMedium
         )
-        Spacer(modifier = Modifier.weight(1f))
+        Spacer(modifier = Modifier.height(48.dp))
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text("CARD-LST", fontSize = 32.sp, fontWeight = FontWeight.Bold, color = Color(0xFF8A2BE2))
             Text("MOBILE APP", fontSize = 16.sp, color = Color.Gray)
             Text("2025", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color(0xFF8A2BE2))
         }
+        Spacer(modifier = Modifier.weight(1f))
+
+        Text(text = stringResource(id = R.string.developer_name))
+        Text(text = stringResource(id = R.string.developer_nim))
+
+        Spacer(modifier = Modifier.height(24.dp))
     }
 }
