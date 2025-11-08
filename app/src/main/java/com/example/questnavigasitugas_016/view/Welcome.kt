@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -32,20 +33,21 @@ fun WelcomeScreen(navController: NavController) {
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.SpaceAround
     ) {
+        Spacer(modifier = Modifier.height(1.dp))
+
         Text(
             text = stringResource(R.string.welcome_title),
-            style = MaterialTheme.typography.headlineMedium
+            style = MaterialTheme.typography.headlineLarge
         )
-        Spacer(modifier = Modifier.height(48.dp))
+        Spacer(modifier = Modifier.height(100.dp))
 
         Image(
             painter = painterResource(id = R.drawable.logo_welcome),
             contentDescription = "App Logo",
-            modifier = Modifier.fillMaxWidth(0.7f)
+            modifier = Modifier.size(400.dp)
         )
-        Spacer(modifier = Modifier.weight(1f))
 
         Text(text = stringResource(id = R.string.developer_name))
         Text(text = stringResource(id = R.string.developer_nim))
