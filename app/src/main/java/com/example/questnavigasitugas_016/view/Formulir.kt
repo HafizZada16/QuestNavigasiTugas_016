@@ -63,6 +63,9 @@ fun FormulirScreen(navController: NavController, viewModel: ParticipantViewModel
     var showValidationError by remember { mutableStateOf(false) }
     var showSuccessDialog by remember { mutableStateOf<FormData?>(null) }
 
+    val genderMale = stringResource(id = R.string.gender_male)
+    val genderFemale = stringResource(id = R.string.gender_female)
+
     val handleSubmit = {
         if (name.isBlank() || gender == null || maritalStatus.isBlank() || address.isBlank()) {
             showValidationError = true
@@ -121,14 +124,14 @@ fun FormulirScreen(navController: NavController, viewModel: ParticipantViewModel
             Text(stringResource(R.string.gender_label), style = MaterialTheme.typography.labelMedium)
             Row(verticalAlignment = Alignment.CenterVertically) {
                 RadioButton(
-                    selected = gender == stringResource(id = R.string.gender_male),
-                    onClick = { gender = stringResource(id = R.string.gender_male)}
+                    selected = gender == genderMale,
+                    onClick = { gender = genderMale }
                 )
                 Text(stringResource(id = R.string.gender_male))
                 Spacer(modifier = Modifier.width(16.dp))
                 RadioButton(
-                    selected = gender == stringResource(id = R.string.gender_female),
-                    onClick = { gender = stringResource(id = R.string.gender_female) }
+                    selected = gender == genderFemale,
+                    onClick = { gender = genderFemale }
                 )
                 Text(stringResource(id = R.string.gender_female))
             }
