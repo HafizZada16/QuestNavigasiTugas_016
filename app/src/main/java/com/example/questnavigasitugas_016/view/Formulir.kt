@@ -76,7 +76,6 @@ fun FormulirScreen(navController: NavController, viewModel: ParticipantViewModel
         }
     }
     if (showValidationError) {
-        val participant = null
         ValidationPopup(onDismiss = { showValidationError = false })
     }
     showSuccessDialog?.let { participant ->
@@ -188,7 +187,7 @@ private fun MaritalStatusDropdown(selectedValue: String, onValueChange: (String)
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(4.dp))
-            .border(1.dp, Color.Gray, androidx.compose.foundation.shape.RoundedCornerShape(4.dp))
+            .border(1.dp, Color.Gray, RoundedCornerShape(4.dp))
             .clickable { expanded = true }
             .padding(16.dp)
     ) {
