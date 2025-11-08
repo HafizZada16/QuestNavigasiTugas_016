@@ -1,5 +1,6 @@
 package com.example.questnavigasitugas_016.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.questnavigasitugas_016.data.FormData
@@ -33,4 +34,10 @@ class ParticipantViewModel : ViewModel(){
             )
         )
     )
+    val participants: LiveData<List<FormData>> = _participants
+
+    fun addParticipant(participant: FormData) {
+        val currentList = _participants.value ?: emptyList()
+        _participants.value = currentList + participant
+    }
 }
